@@ -7,7 +7,6 @@ import com.luojilab.component.componentlib.router.ui.UIRouter;
 
 import j.com.componentserivce.jetpack.JetpackService;
 
-@RegisterCompManual
 public class JetpackLike implements IApplicationLike {
 
     UIRouter uiRouter = UIRouter.getInstance();

@@ -9,6 +9,7 @@ buildscript {
         targetSdkVersion = 28
 
         // App dependencies
+        butterknife_version = "9.0.0-rc1"
         paging_version = "2.1.0-beta01"
         constraintLayoutVersion = '1.1.3'
         coreTestingVersion = '2.0.0'
@@ -45,7 +46,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$gradleVersion"
         //  butterknife version must be 8.4.0, if not will error
-        classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-SNAPSHOT'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-rc1'
         classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.13'
 //        classpath "com.tinkerpatch.sdk:tinkerpatch-gradle-plugin:${TINKERPATCH_VERSION}"
         classpath 'com.github.jimu:build-gradle:1.3.3'

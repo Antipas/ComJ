@@ -3,7 +3,7 @@ apply plugin: 'com.jakewharton.butterknife'
 
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
+//apply plugin: 'kotlin-kapt'
 
 
 android {
@@ -12,9 +12,7 @@ android {
     defaultConfig {
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary true
         javaCompileOptions {
@@ -44,7 +42,7 @@ dependencies {
 
     api project(':componentservice')
 
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknife_version"
     annotationProcessor 'com.github.jimu:router-anno-compiler:1.0.1'
 
 
@@ -60,7 +58,7 @@ dependencies {
 
 
 combuild {
-    applicationName = 'com.j.jetpack.runalone.application.JetpackApplication'
+    applicationName = 'j.com.jetpack.runalone.application.JetpackApplication'
     isRegisterCompoAuto = true
 }
 repositories {

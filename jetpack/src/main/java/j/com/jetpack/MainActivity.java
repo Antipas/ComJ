@@ -3,6 +3,7 @@ package j.com.jetpack;
 import android.os.Bundle;
 
 
+import com.luojilab.router.facade.annotation.Autowired;
 import com.luojilab.router.facade.annotation.RouteNode;
 
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -26,6 +27,8 @@ public class MainActivity extends BaseActivity implements ArticleContract.View{
 
 //    private FeedListAdapter adapter;
 
+    @Autowired(name = "desc")
+    String desc;
 
     @Override
     protected void initView(Bundle savedInstanceState) {

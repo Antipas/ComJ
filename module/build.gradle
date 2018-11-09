@@ -2,16 +2,12 @@ apply plugin: 'com.dd.comgradle'
 apply plugin: 'com.jakewharton.butterknife'
 
 android {
-    compileSdkVersion 28
-
-
+    compileSdkVersion rootProject.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 17
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
@@ -35,13 +31,13 @@ dependencies {
 
     api project(':componentservice')
 
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknife_version"
     annotationProcessor 'com.github.jimu:router-anno-compiler:1.0.1'
 }
 
 
 combuild {
-    applicationName = 'com.j.module.runalone.application.JetpackApplication'
+    applicationName = 'j.com.module.runalone.application.JetpackApplication'
     isRegisterCompoAuto = true
 }
 repositories {
