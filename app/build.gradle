@@ -1,0 +1,97 @@
+apply plugin: 'com.dd.comgradle'
+apply plugin: 'AndResGuard'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    defaultConfig {
+        applicationId "j.com.comj"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [host: "app"]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+
+    repositories {
+        flatDir {
+            dirs "libs"
+        }
+    }
+
+
+    combuild {
+        applicationName = 'j.com.comj.ComJAppliaction'
+        isRegisterCompoAuto = true
+    }
+
+    andResGuard {
+        mappingFile = null
+        use7zip = true
+        useSign = true
+        keepRoot = true
+        // add <yourpackagename>.R.drawable.icon into whitelist.
+        // because the launcher will get the icon with his name
+        whiteList = [
+                // for your icon
+                "R.drawable.icon",
+                // for fabric
+                "R.string.com.crashlytics.*",
+                // for google-services
+                "R.string.google_app_id",
+                "R.string.gcm_defaultSenderId",
+                "R.string.default_web_client_id",
+                "R.string.ga_trackingId",
+                "R.string.firebase_database_url",
+                "R.string.google_api_key",
+                "R.string.google_crash_reporting_api_key",
+        ]
+        compressFilePattern = [
+                "*.png",
+                "*.jpg",
+                "*.jpeg",
+//            "*.gif",
+                "resources.arsc"
+        ]
+        sevenzip {
+            artifact = "com.tencent.mm:SevenZip:1.2.13"
+            //path = "/usr/local/bin/7za"
+        }
+    }
+
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+//        testImplementation 'junit:junit:4.12'
+//        androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+        annotationProcessor 'com.github.jimu:router-anno-compiler:1.0.1'
+        implementation project(':componentservice')
+    }
+}

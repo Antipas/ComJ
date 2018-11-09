@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--通用颜色-->
+    <color name="common_color_white">#ffffffff</color>
+    <color name="common_color_black">#ff000000</color>
+    <color name="common_half_black">#7F000000</color>
+
+    <color name="common_colorPrimary">#3F51B5</color>
+    <color name="common_colorPrimaryDark">#303F9F</color>
+    <color name="common_colorAccent">#FF4081</color>
+
+    <color name="common_hint_color">#515151</color>
+    <color name="common_hint_bg">#e6e6e6</color>
+    <color name="common_default_bg">#f6f6f6</color>
+    <color name="common_default_nbg">#e5e5e5</color>
+    <color name="common_title_bg">#323a45</color>
+    <color name="common_banner_color">#854f4f</color>
+    <color name="common_game_bg">#FFD6D6</color>
+    <color name="common_word_color">#898989</color>
+    <color name="common_play_zk_color">#68cebe</color>
+    <color name="common_play_kai_color">#ff7a6e</color>
+    <color name="common_play_zy_color">#f5a623</color>
+    <color name="common_setting_color">#323A45</color>
+    <color name="common_newconcept_theme">#F9C07A</color>
+    <color name="common_marquee_color">#FFD800</color>
+
+    <color name="common_dropdown_more_item_bg">#4a4a4c</color>
+    <color name="common_dropdown_selected">#C235F9</color>
+    <color name="common_green_unipus">#13bdb1</color>
+    <color name="common_transparent">#00000000</color>
+    <color name="common_white">#ffffff</color>
+    <color name="common_black">#000000</color>
+    <color name="common_gray">#808080</color>
+    <color name="common_royalblue">#4169e1</color>
+    <color name="common_cover_layer">#65000000</color>
+    <color name="common_toolbar_ripple_color">#fff</color>
+
+    <!-- TabLayout -->
+    <color name="common_tab_normal_bg">#f1f2f5</color>
+    <color name="common_tab_selected_text_color">#5e5e5f</color>
+    <color name="common_tab_split_line_color">#c3c3c3</color>
+    <!-- TextContentActivity -->
+    <color name="common_headlines_title_tip">#989aa6</color>
+    <color name="common_headlines_title">#393939</color>
+    <color name="common_headlines_source">#787878</color>
+    <color name="common_headlines_detail_title">#4d4d4d</color>
+    <color name="common_headlines_detail_text">#4d4d4d</color>
+    <color name="common_headlines_detail_share">#491d1e</color>
+    <color name="common_headlines_detail_share_line">#797979</color>
+    <color name="common_blue">#0477c7</color>
+    <color name="common_headlines_video_highlighted">#3bc3fb</color>
+    <!--SmallPicListActivity-->
+    <color name="common_headlines_list_in_title">#343434</color>
+    <color name="common_headlines_list_in_desc">#757575</color>
+    <!-- Toolbar -->
+    <color name="common_headlines_toolbar_title">#343434</color>
+    <color name="common_headlines_toolbar_split_line">#c3c3c3</color>
+
+    <color name="common_detail_comment_name_color">#ff406599</color>
+    <color name="common_detail_comment_like_color">#ff505050</color>
+    <color name="common_detail_comment_content_color">#ff505050</color>
+    <color name="common_base_night_float_color">#8a000000</color>
+
+    <color name="common_hxw_page_bg">#f5f5f5</color>
+    <color name="common_hxw_theme_color">#fe7a6e</color>
+    <color name="common_hxw_dividingline_color">#e7e7e7</color>
+    <color name="common_hxw_card_color">#ffffff</color>
+    <color name="common_hxw_clicktest_color">#fe7a6e</color>
+    <color name="common_hxw_main_title_color">#333333</color>
+    <color name="common_hxw_minor_text_color">#666666</color>
+    <color name="common_hxw_tishi_text_color">#999999</color>
+
+    <color name="common_mall_item_active_btn">#F05142</color>
+    <color name="common_mall_item_verified_btn">#F76D1F</color>
+
+    <color name="common_appthemecolor">#FE7A6E</color>
+    <color name="common_apptheme_light">#FF7A6E</color>
+
+
+    <color name="common_deadline">#7B7B7B</color>
+    <color name="common_hint">#CCCCCC</color>
+    <color name="common_text">#2F2F2F</color>
+    <color name="common_line">#EDEDED</color>
+    <color name="common_bg">#F6F6F6</color>
+</resources>

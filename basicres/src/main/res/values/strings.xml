@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">basicres</string>
+    <string name="common_nomore">no more</string>
+    <string name="common_loading">loading</string>
+</resources>
