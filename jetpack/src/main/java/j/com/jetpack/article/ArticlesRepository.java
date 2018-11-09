@@ -2,10 +2,13 @@ package j.com.jetpack.article;
 
 import android.content.Context;
 
+import java.util.List;
+
 import io.reactivex.Flowable;
 import j.com.jetpack.JetpackNetworkManager;
 import j.com.jetpack.api.ArticleApi;
 import j.com.jetpack.data.GankIoDataBean;
+import j.com.jetpack.data.GankIoItemBean;
 
 public class ArticlesRepository implements ArticlesDataSource{
 
@@ -32,5 +35,10 @@ public class ArticlesRepository implements ArticlesDataSource{
     @Override
     public Flowable<GankIoDataBean> getArticles(int page) {
         return articleApi.getArticleList(10, page);
+    }
+
+    @Override
+    public Flowable<List<GankIoItemBean>> getLocalArticles() {
+        return null;
     }
 }

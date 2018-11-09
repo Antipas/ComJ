@@ -16,6 +16,8 @@ public class ArticlePresenter implements ArticleContract.Presenter, LifecycleObs
 
     private ArticlesRepository repository;
 
+    private ArticleLocalRepository localRepository;
+
     private ArticleContract.View mView;
 
     private final BaseSchedulerProvider mSchedulerProvider;
@@ -23,9 +25,11 @@ public class ArticlePresenter implements ArticleContract.Presenter, LifecycleObs
     private CompositeDisposable mCompositeDisposable;
 
     public ArticlePresenter(@NonNull ArticlesRepository repository,
+                            @NonNull ArticleLocalRepository localRepository,
                             @NonNull ArticleContract.View view,
                             @NonNull BaseSchedulerProvider schedulerProvider){
         this.repository = repository;
+        this.localRepository = localRepository;
         this.mView = view;
         this.mSchedulerProvider = schedulerProvider;
         view.setPresenter(this);
@@ -64,5 +68,22 @@ public class ArticlePresenter implements ArticleContract.Presenter, LifecycleObs
         );
 
 
+    }
+
+    @Override
+    public void getLocalArticles() {
+        mCompositeDisposable.add(
+                localRepository.getArticles(0)
+                        .subscribeOn(mSchedulerProvider.io())
+                        .observeOn(mSchedulerProvider.ui())
+                        .subscribeWith(new CallbackWrapper<GankIoDataBean>(mView) {
+                            @Override
+                            protected void onSuccess(GankIoDataBean dataBean) {
+
+
+                                mView.showArticles(dataBean);
+                            }
+                        })
+        );
     }
 }

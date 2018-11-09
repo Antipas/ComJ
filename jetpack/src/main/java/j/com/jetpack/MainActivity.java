@@ -13,6 +13,7 @@ import butterknife.BindView;
 import j.com.componentserivce.base.BaseActivity;
 import j.com.componentserivce.util.schedulers.SchedulerProvider;
 import j.com.jetpack.article.ArticleContract;
+import j.com.jetpack.article.ArticleLocalRepository;
 import j.com.jetpack.article.ArticlePresenter;
 import j.com.jetpack.article.ArticlesRepository;
 import j.com.jetpack.data.GankIoDataBean;
@@ -46,6 +47,7 @@ public class MainActivity extends BaseActivity implements ArticleContract.View{
 
         presenter = new ArticlePresenter(
                 ArticlesRepository.getInstance(getApplicationContext()),
+                ArticleLocalRepository.getInstance(),
                 this,
                 SchedulerProvider.getInstance()
         );

@@ -1,17 +1,24 @@
 package j.com.jetpack.data;
 
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.room.Embedded;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+import androidx.room.Relation;
+import j.com.componentserivce.Constants;
 import j.com.componentserivce.base.BaseResult;
 
 /**
  * Created by jingbin on 2016/11/24.
  */
-
 public class GankIoDataBean extends BaseResult implements Serializable {
-
 
     private boolean error;
     /**
@@ -26,93 +33,19 @@ public class GankIoDataBean extends BaseResult implements Serializable {
      * who : Chauncey
      */
 
-
-    private List<ResultBean> results;
-
-    public static class ResultBean implements Serializable {
+    private List<GankIoItemBean> results;
 
 
-        private String _id;
 
-        private String createdAt;
-
-        private String desc;
-
-        private String publishedAt;
-
-        private String source;
-
-        private String type;
-
-        private String url;
-
-        private boolean used;
-
-        private String who;
-
-        private List<String> images;
-
-        public String get_id() {
-            return _id;
-        }
-
-        public String getCreatedAt() {
-            return createdAt;
-        }
-
-        public String getDesc() {
-            return desc;
-        }
-
-        public String getPublishedAt() {
-            return publishedAt;
-        }
-
-        public String getSource() {
-            return source;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public String getUrl() {
-            return url;
-        }
-
-        public boolean isUsed() {
-            return used;
-        }
-
-        public String getWho() {
-            return who;
-        }
-
-        @Override
-        public String toString() {
-            return "ResultsBean{" +
-                    "who='" + who + '\'' +
-                    ", used=" + used +
-                    ", url='" + url + '\'' +
-                    ", type='" + type + '\'' +
-                    ", source='" + source + '\'' +
-                    ", publishedAt='" + publishedAt + '\'' +
-                    ", desc='" + desc + '\'' +
-                    ", createdAt='" + createdAt + '\'' +
-                    ", _id='" + _id + '\'' +
-                    '}';
-        }
-
-        public List<String> getImages() {
-            return images;
-        }
+    public void setResults(List<GankIoItemBean> results) {
+        this.results = results;
     }
 
     public boolean isError() {
         return error;
     }
 
-    public List<ResultBean> getResults() {
+    public List<GankIoItemBean> getResults() {
         return results;
     }
 

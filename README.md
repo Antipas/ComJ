@@ -1,4 +1,6 @@
 # ComJ
 
 
-### MVP + Rxjava2 + Retrofit+ androidx.lifecycle
+### MVP + Rxjava2 + Retrofit+ androidx.lifecycle + Room
+Component Architecture
+

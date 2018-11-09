@@ -12,5 +12,7 @@ public class ArticleContract {
 
     public interface Presenter extends BasePresenter {
         void getArticles(int page);
+
+        void getLocalArticles();
     }
 }
